@@ -26,7 +26,7 @@ export default function RootLayout({
             <Toaster />
             <ProgressBarProvider />
             <Navbar />
-            <div className="mt-20 min-h-screen">{children}</div>
+            <div className="mt-20 min-h-[calc(100vh-9rem)]">{children}</div>
             <Footer />
           </ThemeProvider>
         </QureryProvider>
