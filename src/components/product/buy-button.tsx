@@ -10,7 +10,7 @@ type AddToCartButtonProps = {
   productId: string
 }
 
-export function AddToCartButton({ productId, link }: AddToCartButtonProps) {
+export function BuyButton({ productId, link }: AddToCartButtonProps) {
   const { isPending, mutate: add } = useMutation({
     mutationFn: async () => {
       await addClick(productId)
@@ -26,16 +26,9 @@ export function AddToCartButton({ productId, link }: AddToCartButtonProps) {
         variant="outline"
         disabled={isPending}
         onClick={() => add()}
-        className="w-1/2 border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+        className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground"
       >
-        Buy Now!
-      </Button>
-      <Button
-        disabled={isPending}
-        onClick={() => add()}
-        className="w-1/2 border border-primary hover:bg-background hover:text-primary"
-      >
-        Add to Cart
+        Buy Now!<sub className="text-xs">(Amazon)</sub>
       </Button>
     </div>
   )

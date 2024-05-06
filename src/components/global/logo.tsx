@@ -17,9 +17,7 @@ export function Logo({ className }: LogoProps) {
         alt="Trendify Logo"
         className={cn("object-contain w-48", className)}
       />
-      <p className="text-xs text-primary font-medium absolute top-0 -right-14">
-        (Amazon)
-      </p>
+      <sub className="text-xs text-primary ml-1">(Amazon)</sub>
     </Link>
   )
 }

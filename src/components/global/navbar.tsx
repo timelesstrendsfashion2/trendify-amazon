@@ -14,13 +14,13 @@ export async function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 w-full px-8 h-20 flex items-center justify-between z-30 bg-background border-b">
-      <Logo className="md:w-36 w-28" />
+      <Logo className="md:w-36 sm:w-28 w-24" />
 
       <React.Suspense>
         <Categories />
       </React.Suspense>
 
-      <div className="flex items-center gap-3">
+      <div className="flex items-center gap-1">
         <ModeToggle />
 
         <Link href={"/search"}>

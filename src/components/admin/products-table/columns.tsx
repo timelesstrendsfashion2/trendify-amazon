@@ -31,7 +31,7 @@ export const columns: ColumnDef<Product & { images: ProductImage[] }>[] = [
     header: "Title",
     cell: ({ row }) => {
       const title = row.getValue("title") as string
-      return <p className="truncate max-w-[200px]">{title}</p>
+      return <p className="truncate max-w-[180px]">{title}</p>
     },
   },
   {
@@ -39,6 +39,21 @@ export const columns: ColumnDef<Product & { images: ProductImage[] }>[] = [
     header: "Price",
     cell: ({ row }) => {
       const price = parseFloat(row.getValue("price"))
+      const formatted = new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: "USD",
+      }).format(price)
+
+      return <>{formatted}</>
+    },
+  },
+  {
+    accessorKey: "salePrice",
+    header: "Sale",
+    cell: ({ row }) => {
+      const price = parseFloat(
+        row.getValue("salePrice") || row.getValue("price")
+      )
       const formatted = new Intl.NumberFormat("en-US", {
         style: "currency",
         currency: "USD",

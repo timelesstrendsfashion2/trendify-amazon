@@ -114,3 +114,5 @@ export const METADATA: Metadata = {
     "Discover trending products",
   ],
 }
+
+export const ADMIN_PRODUCTS_LIMIT = 10

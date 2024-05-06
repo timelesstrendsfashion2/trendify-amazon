@@ -6,7 +6,7 @@ import { notFound } from "next/navigation"
 import { db } from "@/lib/db"
 import { getSession } from "@/lib/auth"
 import { RatingStars } from "@/components/product/rating-stars"
-import { AddToCartButton } from "@/components/product/add-to-cart-button"
+import { BuyButton } from "@/components/product/buy-button"
 import {
   Carousel,
   CarouselContent,
@@ -101,7 +101,7 @@ export default async function ProductIdPage({
 
         <p className="text-sm text-muted-foreground">{product.description}</p>
 
-        <AddToCartButton productId={product.id} link={product.affiliateLink} />
+        <BuyButton productId={product.id} link={product.affiliateLink} />
       </div>
     </div>
   )
